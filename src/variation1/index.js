@@ -21,7 +21,6 @@ var chooseStartDateSooner = {
         if (i > 0) {
           return moment(item.getAttribute('label'), ['MMMMDDY', 'MMMMDDY']).format('MMM Do, Y');
         }
-        //return i > 0 && moment(item.getAttribute('label'), ['MMMMDDY', 'MMMMDDY']).format('MMM Do, Y');
       })
       .filter(Boolean);
 
@@ -51,7 +50,7 @@ var chooseStartDateSooner = {
 
       if (i === 0) {
         singleDate.classList.add('selected');
-        chooseStartDateSooner.selectActual(i);
+        chooseStartDateSooner.selectActual(i + 1);
       }
       singleDate.addEventListener('click', function (e) {
         Array.from(e.target.closest('.newdate-container').children).forEach(function (item) {
@@ -71,7 +70,7 @@ var chooseStartDateSooner = {
   },
   selectActual: function (index) {
     var dropdown = document.querySelector('#date-dropdown-billing');
-    dropdown.getElementsByTagName('option')[index + 1].selected = 'selected';
+    dropdown.selectedIndex = index;
     dropdown.dispatchEvent(new Event('change'));
   },
   responsiveHeight: function (dateArr) {
@@ -102,7 +101,7 @@ var chooseStartDateSooner = {
   if (document.readyState === 'complete') {
     try {
       chooseStartDateSooner.init();
-      console.log('Test004 - Enroll - Choosing A Start Date Sooner');
+      console.log('RUNNING....Test004 - Enroll - Choosing A Start Date Sooner');
     } catch (error) {
       console.log('Initialization error:', error);
     }
