@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Test004 - Enroll - Choosing A Start Date Sooner
 // @author       You
-// @match       https://staging.trydesignlab.com/web-design-course/enroll/
+// @match       https://trydesignlab.com/interaction-design-course/enroll/
 
 // ==/UserScript==
 

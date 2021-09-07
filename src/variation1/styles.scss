@@ -30,15 +30,15 @@ label[for="course-pacing-billing"] {
     &__contact--msg {
 
         margin-top: 10px;
-        margin-right: -40px;
         font-size: 16px;
         font-weight: 400;
         line-height: 26px;
         color: #8D9096;
         text-align: left;
+        white-space: nowrap;
 
         @media (max-width: 1024px) {
-            margin-right: 0;
+            white-space: normal;
         }
     }
 }
@@ -50,7 +50,7 @@ label[for="course-pacing-billing"] {
 }
 
 .single-date {
-    height: 36px;
+    height: 32px;
     padding: 4px 16px;
     margin-right: 8px;
     border-radius: 4px;
@@ -65,6 +65,8 @@ label[for="course-pacing-billing"] {
         padding: 4px 14px;
         line-height: 26px;
     }
+
+
 }
 
 .single-date.selected {
@@ -73,7 +75,7 @@ label[for="course-pacing-billing"] {
     color: #fff;
     border-radius: 4px;
     border: 2px solid #9A66FE;
-
+    font-weight: 600;
 }
 
 .small-scrn-height {
