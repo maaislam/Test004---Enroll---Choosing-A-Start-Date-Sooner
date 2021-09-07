@@ -18,7 +18,10 @@ var chooseStartDateSooner = {
 
     var startdates = Array.from(dateOptions)
       .map(function (item, i) {
-        return i > 0 && moment(item.getAttribute('label'), ['MMMMDDY', 'MMMMDDY']).format('MMM Do, Y');
+        if (i > 0) {
+          return moment(item.getAttribute('label'), ['MMMMDDY', 'MMMMDDY']).format('MMM Do, Y');
+        }
+        //return i > 0 && moment(item.getAttribute('label'), ['MMMMDDY', 'MMMMDDY']).format('MMM Do, Y');
       })
       .filter(Boolean);
 
@@ -28,6 +31,10 @@ var chooseStartDateSooner = {
     var headline = document.createElement('div');
     headline.innerHTML = 'Choose start date';
     headline.classList.add('newdate-selector__headline');
+
+    var contactUs = document.createElement('div');
+    contactUs.innerHTML = 'You can reach out to Admissions prior to the start date if you need to amend this!';
+    contactUs.classList.add('newdate-selector__contact--msg');
 
     var newDateContainer = document.createElement('div');
     newDateContainer.classList.add('newdate-container');
@@ -55,13 +62,39 @@ var chooseStartDateSooner = {
         chooseStartDateSooner.selectActual(i);
       });
     });
+    anchorElm.insertAdjacentElement('afterend', contactUs);
     anchorElm.insertAdjacentElement('afterend', newDateContainer);
     anchorElm.insertAdjacentElement('afterend', headline);
+
+    this.responsiveHeight(dateArr);
+    this.removeComma(dateArr);
   },
   selectActual: function (index) {
     var dropdown = document.querySelector('#date-dropdown-billing');
     dropdown.getElementsByTagName('option')[index + 1].selected = 'selected';
     dropdown.dispatchEvent(new Event('change'));
+  },
+  responsiveHeight: function (dateArr) {
+    var dateCount = dateArr.length;
+
+    document.querySelectorAll('.single-date').forEach(function (item) {
+      if (dateCount == 2) {
+        item.classList.add('small-scrn-height');
+      } else {
+        item.classList.remove('small-scrn-height');
+      }
+    });
+  },
+  removeComma: function (dateArr) {
+    var dateCount = dateArr.length;
+
+    var scrnSize = window.matchMedia('(max-width: 484px)').matches;
+
+    if (dateCount >= 3 && scrnSize) {
+      document.querySelectorAll('.single-date').forEach(function (item) {
+        item.innerText = item.innerText.replace(',', '');
+      });
+    }
   },
 };
 
