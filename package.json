@@ -1,0 +1,19 @@
+{
+  "name": "parcel-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^5.0.6",
+    "postcss": "^8.3.6",
+    "sass": "^1.35.2"
+  },
+  "dependencies": {}
+}
