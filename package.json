@@ -2,18 +2,27 @@
   "name": "parcel-setup",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "parcel build src/index.html --no-minify",
-    "start": "parcel src/index.html"
+    "build": "parcel build src/index.html --no-source-maps",
+    "prebuild": "rm -rf dist",
+    "start": "parcel src/index.html --no-cache --no-source-maps"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
     "cssnano": "^5.0.6",
-    "postcss": "^8.3.5",
+    "postcss": "^8.3.6",
     "sass": "^1.35.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "parcel": "^2.0.0-rc.0",
+    "postcss-modules": "^4.2.2"
+  }
 }

@@ -1,1 +1,1 @@
-import uxaFrontpageV1 from './variation1/index';
+import chooseStartDateSooner from './variation1/index';

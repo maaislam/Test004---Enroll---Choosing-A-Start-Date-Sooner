@@ -32,7 +32,7 @@ var chooseStartDateSooner = {
     headline.classList.add('newdate-selector__headline');
 
     var contactUs = document.createElement('div');
-    contactUs.innerHTML = 'You can reach out to Admissions prior to the start date if you need to amend this!';
+    contactUs.innerHTML = `You can reach out to Admissions prior to the start date if you need to amend this!`;
     contactUs.classList.add('newdate-selector__contact--msg');
 
     var newDateContainer = document.createElement('div');
@@ -40,7 +40,7 @@ var chooseStartDateSooner = {
 
     var anchorElm = document.querySelector('.form-progress');
 
-    dateArr.forEach(function (newDate, i) {
+    dateArr.forEach((newDate, i) => {
       var singleDate = document.createElement('div');
 
       singleDate.classList.add('single-date');
@@ -52,8 +52,8 @@ var chooseStartDateSooner = {
         singleDate.classList.add('selected');
         chooseStartDateSooner.selectActual(i + 1);
       }
-      singleDate.addEventListener('click', function (e) {
-        Array.from(e.target.closest('.newdate-container').children).forEach(function (item) {
+      singleDate.addEventListener('click', (e) => {
+        Array.from(e.target.closest('.newdate-container').children).forEach((item) => {
           item.classList.remove('selected');
         });
 
