@@ -18,8 +18,8 @@ link.type = 'text/css';
 link.rel = 'stylesheet';
 script.type = 'text/javascript';
 //script1.type = 'text/javascript';
-link.href = 'http://localhost:1234/main.39afc03c.css';
-script.src = 'http://localhost:1234/src.e31bb0bc.js';
+link.href = 'http://localhost:1234/index.10330133.css';
+script.src = 'http://localhost:1234/index.20e47298.js';
 //script1.src = 'http://localhost:1234/main.39afc03c.js';
 
 headID.appendChild(link);
